@@ -15,7 +15,7 @@
             <Image url="@../../../../../../signInBackground.jpeg" />
          </image>
       </ImageView>
-      <TextField fx:id="email" alignment="CENTER" layoutX="216.0" layoutY="149.0" promptText="email" styleClass="inputBox" stylesheets="@Main.css" />
+      <TextField alignment="CENTER" layoutX="216.0" layoutY="149.0" promptText="username" styleClass="inputBox" stylesheets="@Main.css" />
       <TextField alignment="CENTER" layoutX="216.0" layoutY="201.0" promptText="password" styleClass="inputBox" stylesheets="@Main.css" />
       <Text fill="WHITE" layoutX="271.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="msg.">
          <font>

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="600.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="600.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.connorbrezinsky.msg.gui.main.LogInController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0">
          <image>
@@ -22,7 +22,7 @@
             <Font name="Raleway Thin" size="25.0" />
          </font>
       </Text>
-      <Button layoutX="216.0" layoutY="257.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="163.0" styleClass="submitButton" stylesheets="@Main.css" text="Sign in" />
+      <Button layoutX="216.0" layoutY="257.0" mnemonicParsing="false" onAction="#exitCalculator" prefHeight="27.0" prefWidth="163.0" styleClass="submitButton" stylesheets="@Main.css" text="Sign in" />
       <Hyperlink layoutX="275.0" layoutY="296.0" text="or sign up">
          <font>
             <Font name="Raleway Regular" size="9.0" />
