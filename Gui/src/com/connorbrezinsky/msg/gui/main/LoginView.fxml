@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="600.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.connorbrezinsky.msg.gui.controller.LoginController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@LoginViewBackground.jpeg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="inptEmail" alignment="CENTER" layoutX="217.0" layoutY="129.0" promptText="email" styleClass="inputBox" stylesheets="@Main.css" />
+      <TextField fx:id="inptPassword" alignment="CENTER" layoutX="214.0" layoutY="173.0" promptText="password" styleClass="inputBox" stylesheets="@Main.css" />
+      <Text fill="WHITE" layoutX="273.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="msg.">
+         <font>
+            <Font name="Raleway Thin" size="25.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnLogin" layoutX="216.0" layoutY="257.0" mnemonicParsing="false" onAction="#btnLoginClicked" prefHeight="27.0" prefWidth="163.0" styleClass="submitButton" stylesheets="@Main.css" text="Login" />
+      <Hyperlink fx:id="btnSignUp" layoutX="275.0" layoutY="296.0" text="or sign up">
+         <font>
+            <Font name="Raleway Regular" size="9.0" />
+         </font>
+      </Hyperlink>
+      <ProgressIndicator layoutX="282.0" layoutY="211.0" prefHeight="27.0" prefWidth="31.0" />
+   </children>
+</AnchorPane>

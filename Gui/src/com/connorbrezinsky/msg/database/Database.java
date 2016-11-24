@@ -15,28 +15,13 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>
 */
 
-package com.connorbrezinsky.msg.gui.main;
+package com.connorbrezinsky.msg.database;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+public class Database {
 
-public class Main extends Application {
-	  public static void main(String[] args) {
-	        Application.launch(Main.class, args);
-	    }
-	    
-	    @Override
-	    public void start(Stage stage) throws Exception {
-	        Parent root = FXMLLoader.load(getClass().getResource("LoginView.fxml"));
-	        
-	        stage.setTitle("msg");
-	        stage.setScene(new Scene(root, 600, 400));
-	        stage.setResizable(false);
-	        stage.show();
-	        
-	    }
-	    
+	public static final String HOST = "";
+	public static final String DATABASE = "";
+	public static final String USERNAME = "";
+	public static final String PASSWORD = "";
+	
 }
