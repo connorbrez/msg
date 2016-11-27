@@ -1,4 +1,4 @@
-/*   msg. Encrypted Message. For everyone.
+/*   msg. Encrypted Messaging. For everyone.
     Copyright (C) 2016 Connor Brezinsky
 
     This program is free software: you can redistribute it and/or modify
@@ -17,11 +17,16 @@
 
 package com.connorbrezinsky.msg.database;
 
+/* database credentials, if you 
+ * cloned/forked or downloaded the 
+ * source you have to provide your 
+ * own database */
+
 public class Database {
 
 	public static final String HOST = "";
 	public static final String DATABASE = "";
 	public static final String USERNAME = "";
 	public static final String PASSWORD = "";
-	
+
 }
