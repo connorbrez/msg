@@ -1,0 +1,56 @@
+<!--    msg. Encrypted Message. For everyone.
+    Copyright (C) 2016 Connor Brezinsky
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>
+ -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="pane" maxHeight="600.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: E8E8E1;" stylesheets="@Main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.connorbrezinsky.msg.gui.controller.DashController">
+   <children>
+      <ScrollPane fx:id="serverPane" hbarPolicy="NEVER" layoutX="375.0" layoutY="13.0" prefHeight="340.0" prefWidth="211.0" style="-fx-background-color: rgba(0,0,0,0);" styleClass="chatWindow" stylesheets="@Main.css" vbarPolicy="ALWAYS" />
+     
+      <Label fx:id="lblDisplayName" alignment="CENTER" contentDisplay="CENTER" layoutX="23.0" layoutY="152.0" prefHeight="60.0" prefWidth="319.0" text="Display Name" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      
+       <Button fx:id="btnRemoveServer" layoutX="349.0" layoutY="48.0" mnemonicParsing="false" onAction="#btnRemoveServerClicked" styleClass="chatViewButton" text="-" />
+      <Button fx:id="btnAddServer" layoutX="348.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnAddServerClicked" styleClass="chatViewButton" text="+" />
+      <Label fx:id="lblEmail" alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="197.0" prefHeight="52.0" prefWidth="312.0" text="example@email.com" textAlignment="CENTER" wrapText="true" />
+      <ImageView fx:id="profilePicture" fitHeight="145.0" fitWidth="145.0" layoutX="107.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@placeholder-image.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </ImageView>
+      <Button layoutX="379.0" layoutY="358.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="204.0" styleClass="chatViewButton" text="quick connect" />
+      <Button layoutX="15.0" layoutY="358.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="76.0" styleClass="flatButton" text="settings" />
+   </children>
+</AnchorPane>

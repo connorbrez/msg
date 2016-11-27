@@ -58,6 +58,7 @@ public class SignUpController implements Initializable {
 		// continues along if both passwords match;
 		if (userPassword.equals(userPasswordConfirm)) {
 
+			@SuppressWarnings("unused")
 			User user = new User(userEmail);
 
 		} else {

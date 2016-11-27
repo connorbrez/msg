@@ -1,0 +1,41 @@
+<!--    msg. Encrypted Message. For everyone.
+    Copyright (C) 2016 Connor Brezinsky
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>
+ -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="600.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: E8E8E1;" stylesheets="@Main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="inptServerIp" alignment="CENTER" layoutX="217.0" layoutY="127.0" promptText="server ip" styleClass="messageBox" />
+      <TextField fx:id="inptEncryptionKey" alignment="CENTER" layoutX="217.0" layoutY="173.0" promptText="encryption key" styleClass="messageBox" />
+      <Button fx:id="btnCancel" layoutX="307.0" layoutY="222.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="77.0" styleClass="disconnectButton" text="Cancel" />
+      <Button fx:id="btnConnect" layoutX="217.0" layoutY="222.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="77.0" styleClass="sendButton" text="Connect" />
+      <Text fill="#aeaeae" layoutX="177.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="quick connect" textAlignment="CENTER" wrappingWidth="247.4189453125">
+         <font>
+            <Font name="Montserrat-Regular" size="34.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

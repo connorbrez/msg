@@ -15,38 +15,47 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>
 */
 
-package com.connorbrezinsky.msg.gui.main;
+package com.connorbrezinsky.msg.user;
 
-import com.connorbrezinsky.msg.user.User;
+public class Server {
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-
-public class Main extends Application {
-
-	public static final int MAX_MESSAGE_SIZE = 500;
+	String ip, port, encryptionKey;
 	
-	public static User user;
+	public Server(){
+		this.ip="localhost";
+		this.port="54555";
+		
+	}
 	
-	public static Stage stage;
-	
-
-	public static void main(String[] args) {
-		Application.launch(Main.class, args);
+	public Server(String ip){
+		this.ip = ip;
+		this.port = "54555";
 	}
 
-	@Override
-	public void start(Stage s) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("DashView.fxml"));
-		stage = s;
-		stage.setTitle("msg");
-		stage.setScene(new Scene(root, 600, 400));
-		stage.setResizable(false);
-		stage.show();
-
+	public String getIp() {
+		return ip;
 	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+	}
+
+	public String getPort() {
+		return port;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
+	}
+
+	public String getEncryptionKey() {
+		return encryptionKey;
+	}
+
+	public void setEncryptionKey(String encryptionKey) {
+		this.encryptionKey = encryptionKey;
+	}
+	
+	
 
 }

@@ -1,0 +1,43 @@
+<!--    msg. Encrypted Message. For everyone.
+    Copyright (C) 2016 Connor Brezinsky
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>
+ -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="600.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: E8E8E1;" stylesheets="@Main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.connorbrezinsky.msg.gui.controller.ChatController">
+	<children>
+		<TextField fx:id="inptMessageBox" layoutX="18.0" layoutY="359.0" prefHeight="28.0" prefWidth="567.0" promptText="message" styleClass="messageBox" />
+		<Button fx:id="btnSend" layoutX="527.0" layoutY="359.0" mnemonicParsing="false" onAction="#btnSendClicked" prefHeight="16.0" prefWidth="59.0" styleClass="sendButton" text="send" />
+		<ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutX="19.0" layoutY="53.0" prefHeight="291.0" prefWidth="567.0" styleClass="chatWindow" vbarPolicy="ALWAYS">
+			<content>
+				<VBox fx:id="content" prefHeight="287.0" prefWidth="547.0" styleClass="chatWindow" />
+			</content>
+		</ScrollPane>
+		<Button fx:id="btnLeave" layoutX="522.0" layoutY="16.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="59.0" styleClass="disconnectButton" text="leave" />
+		<Button fx:id="btnServerInfo" layoutX="24.0" layoutY="16.0" mnemonicParsing="false" styleClass="chatViewButton" text="server info" />
+		<Button fx:id="btnClientList" layoutX="122.0" layoutY="16.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="76.0" styleClass="chatViewButton" text="client list" />
+		<Button fx:id="btnHome" layoutX="449.0" layoutY="15.0" mnemonicParsing="false" styleClass="chatViewButton" text="Home" />
+	</children>
+</AnchorPane>

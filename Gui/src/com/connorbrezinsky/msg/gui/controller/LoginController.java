@@ -15,20 +15,25 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>
 */
 
- package com.connorbrezinsky.msg.gui.controller;
+package com.connorbrezinsky.msg.gui.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.connorbrezinsky.msg.gui.main.Main;
 import com.connorbrezinsky.msg.service.LoginService;
 import com.connorbrezinsky.msg.service.UserExistsService;
 import com.connorbrezinsky.msg.user.User;
 
-import javafx.concurrent.Worker.State;
 import javafx.concurrent.WorkerStateEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.TextField;
 
 public class LoginController implements Initializable {
@@ -37,22 +42,30 @@ public class LoginController implements Initializable {
 	private TextField inptEmail;
 	@FXML
 	private TextField inptPassword;
+	@FXML
+	private ProgressIndicator loading;
 
 	public void initialize(URL location, ResourceBundle resources) {
-
+		loading.setVisible(false);
 	}
 
 	public void btnLoginClicked() throws Exception {
+		loading.setVisible(true);
+
 		String email = inptEmail.getText();
 		final String password = inptPassword.getText();
 
 		if (email == null || email.equals("")) {
 			System.err.println("enter email");
+			loading.setVisible(false);
+
 			return;
 		}
 
 		if (password == null || password.equals("")) {
 			System.err.println("enter password");
+			loading.setVisible(false);
+
 			return;
 		}
 
@@ -80,8 +93,25 @@ public class LoginController implements Initializable {
 
 							if (userExists.getUser().isVerified()) {
 								System.out.println("successfully logged in");
-							}else{
+								loading.setVisible(false);
+
+								Parent root = null;
+								try {
+									Main.user = userExists.getUser();
+									root = FXMLLoader.load(Main.class.getResource("DashView.fxml"));
+								} catch (IOException e) {
+									e.printStackTrace();
+								}
+
+								if (root != null) {
+									Main.stage.setScene(new Scene(root, 600, 400));
+								} else {
+									System.exit(1);
+								}
+							} else {
 								System.err.println("could not login user");
+								loading.setVisible(false);
+
 							}
 						}
 
@@ -90,19 +120,21 @@ public class LoginController implements Initializable {
 					loginService.setOnFailed(new EventHandler<WorkerStateEvent>() {
 						public void handle(WorkerStateEvent event) {
 							System.err.println("login service failed");
+							loading.setVisible(false);
+
 						}
 					});
 
 					loginService.start();
 					userExists.setUser(loginService.getUser());
+				} else {
+					loading.setVisible(false);
+
 				}
 			}
 
 		});
 		userExists.start();
-		user = userExists.getUser();
-
-
 	}
 
 }
